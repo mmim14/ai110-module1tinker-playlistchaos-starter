@@ -57,8 +57,6 @@ As you explore, write down at least five things that feel confusing, inconsisten
     6. The ratio is wrong. It should be 11 tp 22 or .5
 
 
-
-
 ### 2. Ask AI for help understanding the code  
 
 Pick one issue from your list. Use an AI coding assistant to:
@@ -74,21 +72,6 @@ For example:
 Before making changes, summarize in your own words what you think is happening.
 
 ### 3. Fix at least four issues  
-    
-    1. The Hype playlist and Mixed playlist contain song not appripriate for the engery level (mismatch energy level) 
-        - it actually classifying the songs correctly. I missed the other conditions like if the song contains the hype keywords
-    2. Partial search doesn't work
-        - the search_songs currently find  matches of the value of search field parameter with the query, so if the query doesn't have the entire name of the artist, it doesn't match. I propose switch the logic meaning if query is in field would work
-        - Claude suggested the same edit and it fixed the issue.
-    3. Adding a song feature doesn't work
-        - The add_song_sidebar normalizes the song informations and append it to the session state. 
-        - this is working as well. I might have not added enough information 
-    6. The ratio is wrong. It should be 11 tp 22 or .5
-        - In the compute_playlist_stat function, total only counts hype songs. Include the length of chill and mixed
-    4. The average remains the same at default (4.05) even after I choose several hype and chill song. Choosing a hype song should increase the default average
-        - The average was only counting energy from hype playlist. I changed it to `song in all_songs` 
-    5. Picking Any for Lucky Pick doesn't include songs from Mixed playlist
-        - The lucky_pick function doesn't include mixed playlist when neither hype or chill mode is chosen (or any). 
 
 Make improvements based on your investigation.
 
@@ -111,6 +94,21 @@ After each fix, try interacting with the app again:
 - Check whether playlists behave more consistently  
 
 Confirm that the behavior matches your expectations.
+
+    1. The Hype playlist and Mixed playlist contain song not appripriate for the engery level (mismatch energy level) 
+        - it actually classifying the songs correctly. I missed the other conditions like if the song contains the hype keywords
+    2. Partial search doesn't work
+        - the search_songs currently find  matches of the value of search field parameter with the query, so if the query doesn't have the entire name of the artist, it doesn't match. I propose switch the logic meaning if query is in field would work
+        - Claude suggested the same edit and it fixed the issue.
+    3. Adding a song feature doesn't work
+        - The add_song_sidebar normalizes the song informations and append it to the session state. 
+        - this is working as well. I might have not added enough information 
+    6. The ratio is wrong. It should be 11 tp 22 or .5
+        - In the compute_playlist_stat function, total only counts hype songs. Include the length of chill and mixed
+    4. The average remains the same at default (4.05) even after I choose several hype and chill song. Choosing a hype song should increase the default average
+        - The average was only counting energy from hype playlist. I changed it to `song in all_songs` 
+    5. Picking Any for Lucky Pick doesn't include songs from Mixed playlist
+        - The lucky_pick function doesn't include mixed playlist when neither hype or chill mode is chosen (or any). Claude code suggested the same edit. 
 
 ### 5. Optional stretch goals  
 
