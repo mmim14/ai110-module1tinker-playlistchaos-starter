@@ -73,6 +73,12 @@ For example:
 Before making changes, summarize in your own words what you think is happening.
 
 ### 3. Fix at least four issues  
+    
+    1. The Hype playlist and Mixed playlist contain song not appripriate for the engery level (mismatch energy level) 
+        - it actually classifying the songs correctly. I missed the other conditions like if the song contains the hype keywords
+    2. Partial search doesn't work
+        - the search_songs currently find  matches of the value of search field parameter with the query, so if the query doesn't have the entire name of the artist, it doesn't match. I propose switch the logic meaning if query is in field would work
+        - Claude suggested the same edit and it fixed the issue.
 
 Make improvements based on your investigation.
 
