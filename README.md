@@ -49,6 +49,14 @@ Run the app and try things out:
 - Look at the history  
 
 As you explore, write down at least five things that feel confusing, inconsistent, or strange. These might be bugs, quirks, or unexpected design decisions.
+    1. The Hype playlist and Mixed playlist contain song not appripriate for the engery level (mismatch energy level)
+    2. Partial search doesn't work
+    3. Adding a song feature doesn't work
+    4. The average remains the same at default (4.05) even after I choose several hype and chill song. Choosing a hype song should increase the default average
+    5. Picking Any for Lucky Pick doesn't include songs from Mixed playlist
+
+
+
 
 ### 2. Ask AI for help understanding the code  
 
