@@ -85,6 +85,8 @@ Before making changes, summarize in your own words what you think is happening.
         - this is working as well. I didn't add enough information 
     6. The ratio remains at 1 to 0 even if a chill song is chosen
         - In the compute_playlist_stat function, total only counts hype songs. Include the length of chill and mixed
+     4. The average remains the same at default (4.05) even after I choose several hype and chill song. Choosing a hype song should increase the default average
+        - The average was only counting energy from hype playlist. I changed it to `song in all_songs` 
 
 Make improvements based on your investigation.
 
