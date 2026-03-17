@@ -54,6 +54,7 @@ As you explore, write down at least five things that feel confusing, inconsisten
     3. Adding a song feature doesn't work
     4. The average remains the same at default (4.05) even after I choose several hype and chill song. Choosing a hype song should increase the default average
     5. Picking Any for Lucky Pick doesn't include songs from Mixed playlist
+    6. The ratio remains at 1 to 0 even if a chill song is chosen
 
 
 
@@ -79,6 +80,11 @@ Before making changes, summarize in your own words what you think is happening.
     2. Partial search doesn't work
         - the search_songs currently find  matches of the value of search field parameter with the query, so if the query doesn't have the entire name of the artist, it doesn't match. I propose switch the logic meaning if query is in field would work
         - Claude suggested the same edit and it fixed the issue.
+    3. Adding a song feature doesn't work
+        - The add_song_sidebar normalizes the song informations and append it to the session state. 
+        - this is working as well. I didn't add enough information 
+    6. The ratio remains at 1 to 0 even if a chill song is chosen
+        - In the compute_playlist_stat function, total only counts hype songs. Include the length of chill and mixed
 
 Make improvements based on your investigation.
 
