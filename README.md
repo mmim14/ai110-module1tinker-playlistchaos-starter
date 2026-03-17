@@ -54,7 +54,7 @@ As you explore, write down at least five things that feel confusing, inconsisten
     3. Adding a song feature doesn't work
     4. The average remains the same at default (4.05) even after I choose several hype and chill song. Choosing a hype song should increase the default average
     5. Picking Any for Lucky Pick doesn't include songs from Mixed playlist
-    6. The ratio remains at 1 to 0 even if a chill song is chosen
+    6. The ratio is wrong. It should be 11 tp 22 or .5
 
 
 
@@ -82,11 +82,13 @@ Before making changes, summarize in your own words what you think is happening.
         - Claude suggested the same edit and it fixed the issue.
     3. Adding a song feature doesn't work
         - The add_song_sidebar normalizes the song informations and append it to the session state. 
-        - this is working as well. I didn't add enough information 
-    6. The ratio remains at 1 to 0 even if a chill song is chosen
+        - this is working as well. I might have not added enough information 
+    6. The ratio is wrong. It should be 11 tp 22 or .5
         - In the compute_playlist_stat function, total only counts hype songs. Include the length of chill and mixed
-     4. The average remains the same at default (4.05) even after I choose several hype and chill song. Choosing a hype song should increase the default average
+    4. The average remains the same at default (4.05) even after I choose several hype and chill song. Choosing a hype song should increase the default average
         - The average was only counting energy from hype playlist. I changed it to `song in all_songs` 
+    5. Picking Any for Lucky Pick doesn't include songs from Mixed playlist
+        - The lucky_pick function doesn't include mixed playlist when neither hype or chill mode is chosen (or any). 
 
 Make improvements based on your investigation.
 
